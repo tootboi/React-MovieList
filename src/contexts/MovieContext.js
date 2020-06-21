@@ -9,8 +9,8 @@ const MovieContextProvider = (props) => {
     ], () => {
         const localData = localStorage.getItem('movies');
         return localData ? JSON.parse(localData) : [
-            {title: 'Pulp Fiction', director: 'Quentin Tarantino', id: 'unique-id1'},
-            {title: 'The Grand Budapest Hotel', director: 'Wes Anderson', id: 'unique-id2'}
+            {title: 'Pulp Fiction', director: 'Quentin Tarantino', runtime: "154 min", rating: "8.9", id: 'unique-id1'},
+            {title: 'The Grand Budapest Hotel', director: 'Wes Anderson', runtime: "99 min", rating: "8.1", id: 'unique-id2'}
         ];
     });
     useEffect(() => {

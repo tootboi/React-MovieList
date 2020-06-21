@@ -6,6 +6,8 @@ export const movieReducer = (state, action) => {
             return [...state, {
                 title: action.movie.title,
                 director: action.movie.director,
+                runtime: action.movie.runtime,
+                rating: action.movie.rating,
                 id: uuidv1()
              }]
         case 'REMOVE_MOVIE':

@@ -10,13 +10,19 @@ const MovieForm = () => {
     const search = async (e) => {
         e.preventDefault();
         const data = await fetchMovie(query);
+        //debug
+        console.log(data);
         if (data.Error) {
+            //shows error overlay when movie cannot be found
             setError(query);
             document.getElementById('errorOverlay').style.display = 'block';
         } else {
+            //creates movie list
             const title = data.Title;
             const director = data.Director;
-            dispatch({type: 'ADD_MOVIE', movie: {title, director}});
+            const runtime = data.Runtime;
+            const rating = data.imdbRating;
+            dispatch({type: 'ADD_MOVIE', movie: {title, director, runtime, rating}});
         }
         setQuery('');
     }

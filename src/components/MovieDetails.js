@@ -5,8 +5,9 @@ const MovieDetails = ({movie}) => {
     const {dispatch} = useContext(MovieContext);
     return (
         <li onClick={() => dispatch({type: 'REMOVE_MOVIE', id: movie.id})}>
-            <div className="title">{movie.title}</div>
+            <div className="title">{movie.title} <span className="rating">{movie.rating}</span> </div>
             <div className="director">{movie.director}</div>
+            <div className="runtime">{movie.runtime}</div>
         </li>
     );
 }
