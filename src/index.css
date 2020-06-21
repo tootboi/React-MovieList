@@ -8,11 +8,24 @@ body {
   background: #2e313d;
 }
 
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+html, body {
+  overscroll-behavior-y: none;
+  position: fixed;
+  overflow: hidden;
+}
+
 .App{
   background: #282a35;
-  margin: 20px auto;
+  margin: 2.5vh auto;
   width: 90%;
   max-width: 700px;
+  height: 95%;
   color: #eee;
   border-radius: 20px;
 }
@@ -30,7 +43,16 @@ body {
 }
 
 .movie-list{
-  padding: 20px 20px 0px 20px;
+  padding: 10px 20px 0px 20px;
+  /* this calculates what height is needed to fill up remaining space in .App */
+  /* 126px == .navbar height; 134px == .movieForm height */
+  height: calc(100% - 126px - 134px);
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.movie-list::-webkit-scrollbar {
+  display: none;
 }
 
 .movie-list ul{
@@ -115,4 +137,11 @@ div.overlay {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.movieForm {
+  position: absolute;
+  bottom: 2%;
+  width: 90%;
+  max-width: 700px;
 }

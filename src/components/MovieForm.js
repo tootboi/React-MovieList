@@ -24,7 +24,7 @@ const MovieForm = () => {
         document.getElementById('errorOverlay').style.display = 'none';
     }
     return (
-        <div>
+        <div className='movieForm'>
             <div className="overlayContainer" onClick={overlayOff}>
                 <div id="errorOverlay">
                     <div className="overlay">
